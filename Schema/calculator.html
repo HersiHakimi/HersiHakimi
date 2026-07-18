@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Advanced Calculator - Learn web development with interactive tools">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <title>Calculator | Web Studiot</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../Configuration/style.css">
+
+    <!-- Scripts -->
+    <script src="../Interaction/script.js" defer></script>
+</head>
+
+<body>
+    <!-- ============================================================
+    HEADER
+    ============================================================ -->
+    <header role="banner">
+        <h1>Calculator</h1>
+        <nav id="navbar" aria-label="Main navigation" role="navigation">
+            <ul>
+                <li><a href="../Schema/index.html" aria-current="page">Home</a></li>
+                <li><a href="../Schema/calculator.html" class="active">Calculator</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ============================================================
+    MAIN CONTENT
+    ============================================================ -->
+    <main id="main" role="main">
+        <section class="calculator" aria-label="Calculator interface">
+            <div class="calculator-container">
+                <h2 class="sr-only">Advanced Calculator</h2>
+
+                <div class="calculator-input-group">
+                    <label for="expression" class="sr-only">Math Expression:</label>
+                    <input type="text" id="expression" class="calculator-input" placeholder="Enter your expression..."
+                        autofocus autocomplete="off" spellcheck="false">
+                    <button id="calculate" class="calculator-button" type="button">
+                        <span aria-hidden="true">🧮</span> Calculate
+                    </button>
+                </div>
+
+                <div id="result" class="calculator-result" role="status" aria-live="polite">
+                    <span class="result-placeholder">✨ Ready to calculate</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <p>&copy; <span id="current-year">2026</span> Learning Web Development. All rights reserved.</p>
+            <p class="footer-credit">Built with <span aria-hidden="true">❤️</span> for learning</p>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+    SCRIPTS
+    ============================================================ -->
+    <script>
+        // Auto-update copyright year
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearElement = document.getElementById('current-year');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
+</body>
+
+</html>
